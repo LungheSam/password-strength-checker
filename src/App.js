@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React from "react";
+import { useState } from 'react';
+import passwordStrengthCalculator from './passwordCalculator';
 function App() {
+  const [password,setPassword]=useState("");
+  const [passwordStrength,setPasswordStrength]=useState("");
+  const handleChange=(e)=>{
+    console.log(e.target.value);
+    setPassword(e.target.value);
+    setPasswordStrength(passwordStrengthCalculator(password));
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="welcome-heading">
+        <h1>How Strong is my Password?</h1>
+      </div>
+      <div className="input-password">
+          <input type="password" name='password' className='input-password-input' onChange={ handleChange }  placeholder="Enter your password here....."/>
+      </div>
+      <div className={"response "+passwordStrength}>
+          {passwordStrength}
+      </div>
     </div>
   );
 }

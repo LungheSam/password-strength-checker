@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  margin: 0;
+  padding: 0;
+  font-family:'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
+.welcome-heading h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  animation: fadeIn 1s ease;
+  font-weight: 800;
+}
+
+.input-password {
+  margin-bottom: 20px;
+}
+
+.input-password-input {
+  width: 80%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  font-family: 'Montserrat';
+}
+
+.input-password-input:focus {
+  border-color: #4caf50;
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.response {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  min-width: 200px;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+.response.Weak {
+  background-color: #e74c3c;
+}
+
+.response.Medium {
+  background-color: #f39c12;
+}
+
+.response.Strong {
+  background-color: #2ecc71;
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 450px) {
+  .App {
+    padding: 20px;
+    width: 90%;
+    scale: 0.95;
+  }
+
+  .input-password-input {
+    width: 90%;
+  }
+
+  .welcome-heading h1 {
+    font-size: 1.8rem;
   }
 }
