@@ -53,7 +53,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 - Estimated time to crack the password is displayed based on character combinations.
 
 ## 📸 Demo
-You can click on this link and enjoy the app: 
+You can click on this link and enjoy the app: http://password-strength-checker-phi-five.vercel.app/
 
 ## 💡 Future Enhancements
 - Integrate a dark mode.
